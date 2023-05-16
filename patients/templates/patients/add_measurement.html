@@ -1,0 +1,21 @@
+{% extends "patients/base_generic.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2>Add Measurement</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="form-group">
+            <label for="carer">Carer:</label>
+            <input type="text" class="form-control" id="carer" value="{{ request.user.full_name }}" readonly>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a href="{% url 'measurement_list' patient_id=form.instance.patient_id|default:patient_id %}" class="btn btn-danger">Cancel</a>
+
+    </form>
+
+{% endblock %}
+
+

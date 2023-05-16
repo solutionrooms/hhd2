@@ -1,0 +1,16 @@
+{% extends "patients/base_generic.html" %}
+
+{% block content %}
+  <h2>Measurements for Patient ID: {{ patient_id }}</h2>
+  <ul>
+    {% for measurement in measurements %}
+      <li>
+        Carer: {{ measurement.carer.full_name }} - Weight: {{ measurement.weight_grams }} grams -
+        Notes: {{ measurement.notes }}
+      </li>
+    {% empty %}
+      <li>No measurements available.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'add_measurement' patient_id=patient_id %}">Add a new measurement</a>
+{% endblock %}
