@@ -1,0 +1,109 @@
+{% extends "Patients/base_generic.html" %}
+
+{% block content %}
+  <h2>Add/Edit Patient</h2>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      {{ form.patient_name.label_tag }} {{ form.patient_name }}
+    </div>
+    <div class="form-group">
+      {{ form.finder_name.label_tag }} {{ form.finder_name }}
+    </div>
+    <div class="form-group">
+      {{ form.sex.label_tag }} {{ form.sex }}
+    </div>
+    <div class="form-group">
+      {{ form.age_years.label_tag }} {{ form.age_years }}
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.wants_back }} <label class="custom-control-label" for="{{ form.wants_back.auto_id }}">{{ form.wants_back.label_tag }}</label>
+    </div>
+    <div class="form-group">
+      {{ form.current_weather.label_tag }} {{ form.current_weather }}
+    </div>
+    <div class="form-group">
+      {{ form.comments.label_tag }} {{ form.comments }}
+    </div>
+    <!-- Add the rest of the form fields following the same structure -->
+    <div class="custom-control custom-switch">
+      {{ form.cold_flag }} <label class="custom-control-label" for="{{ form.cold_flag.auto_id }}">{{ form.cold_flag.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.fly_strike_flag }} <label class="custom-control-label" for="{{ form.fly_strike_flag.auto_id }}">{{ form.fly_strike_flag.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.wounds_flag }} <label class="custom-control-label" for="{{ form.wounds_flag.auto_id }}">{{ form.wounds_flag.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.sneezing_flag }} <label class="custom-control-label" for="{{ form.sneezing_flag.auto_id }}">{{ form.sneezing_flag.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.dehydrated_flag }} <label class="custom-control-label" for="{{ form.dehydrated_flag.auto_id }}">{{ form.dehydrated_flag.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.maggots_flag }} <label class="custom-control-label" for="{{ form.maggots_flag.auto_id }}">{{ form.maggots_flag.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.limping_flag }} <label class="custom-control-label" for="{{ form.limping_flag.auto_id }}">{{ form.limping_flag.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.snotty_flag }} <label class="custom-control-label" for="{{ form.snotty_flag.auto_id }}">{{ form.snotty_flag.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.underweight_flag }} <label class="custom-control-label" for="{{ form.underweight_flag.auto_id }}">{{ form.underweight_flag.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.ticks_flag }} <label class="custom-control-label" for="{{ form.ticks_flag.auto_id }}">{{ form.ticks_flag.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.smell_flag }} <label class="custom-control-label" for="{{ form.smell_flag.auto_id }}">{{ form.smell_flag.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.limp_flag }} <label class="custom-control-label" for="{{ form.limp_flag.auto_id }}">{{ form.limp_flag.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.fleas_flag }} <label class="custom-control-label" for="{{ form.fleas_flag.auto_id }}">{{ form.fleas_flag.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.pus_or_infection }} <label class="custom-control-label" for="{{ form.pus_or_infection.auto_id }}">{{ form.pus_or_infection.label_tag }}</label>
+    </div>
+    <div class="form-group">
+      {{ form.course_of_action.label_tag }} {{ form.course_of_action }}
+    </div>
+    <div class="form-group">
+      {{ form.microchip.label_tag }} {{ form.microchip }}
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.poo_sample }} <label class="custom-control-label" for="{{ form.poo_sample.auto_id }}">{{ form.poo_sample.label_tag }}</label>
+    </div>
+    <div class="form-group">
+      {{ form.poo_parasites.label_tag }} {{ form.poo_parasites }}
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.fluids_given }} <label class="custom-control-label" for="{{ form.fluids_given.auto_id }}">{{ form.fluids_given.label_tag }}</label>
+    </div>
+    <div class="form-group">
+      {{ form.fluid_amount.label_tag }} {{ form.fluid_amount }}
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.vet_needed }} <label class="custom-control-label" for="{{ form.vet_needed.auto_id }}">{{ form.vet_needed.label_tag }}</label>
+    </div>
+    <div class="custom-control custom-switch">
+      {{ form.incubator_flag }} <label class="custom-control-label" for="{{ form.incubator_flag.auto_id }}">{{ form.incubator_flag.label_tag }}</label>
+    </div>
+    <div class="form-group">
+      {{ form.incubator_starting_temp_c.label_tag }} {{ form.incubator_starting_temp_c }}
+    </div>
+    <div class="form-group">
+      {{ form.description.label_tag }} {{ form.description }}
+    </div>
+    <div class="form-group">
+      {{ form.patient_status.label_tag }} {{ form.patient_status }}
+    </div>
+    <div class="form-group">
+      {{ form.inserted_at.label_tag }} {{ form.inserted_at }}
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+{% endblock %}

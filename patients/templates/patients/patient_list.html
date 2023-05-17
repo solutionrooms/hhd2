@@ -1,14 +1,32 @@
-{% extends "patients/base_generic.html" %}
+{% extends 'Patients/base_generic.html' %}
 
 {% block content %}
-  <h2>Patients</h2>
-  <ul>
-    {% for patient in patients %}
-      <li>
-        <a href="{% url 'measurement_list' patient_id=patient.id %}">{{ patient.patient_name }}</a>
-      </li>
-    {% empty %}
-      <li>No patients available.</li>
-    {% endfor %}
-  </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="mt-4">Hogs List</h1>
+        <hr>
+        <a href="{% url 'patient_create' %}" class="btn btn-primary mb-4">Add New Hog</a>
+        <div class="card">
+          <div class="card-body">
+            {% if patients %}
+              <ul class="list-group list-group-flush">
+                {% for patient in patients %}
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span>{{ patient.patient_name }}</span>
+                    <div>
+                      <a href="{% url 'measurement_list' patient_id=patient.id %}" class="btn btn-sm btn-info">Measurements</a>
+                      <a href="{% url 'patient_update' patient_id=patient.id %}" class="btn btn-sm btn-warning">Edit</a>
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p>No Hogs found.</p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
