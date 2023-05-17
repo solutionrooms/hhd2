@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'sslserver',
     'django.contrib.staticfiles',
     'patients',
     'crispy_forms',
